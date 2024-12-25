@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Summarizer</title>
+</head>
+<body>
+    <h1>PDF Summarizer</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="pdf" required />
+        <select name="summaryLength">
+            <option value="Short">Short</option>
+            <option value="Medium">Medium</option>
+            <option value="Long">Long</option>
+        </select>
+        <button type="submit">Summarize</button>
+    </form>
+
+    <% if (summary) { %>
+        <h2>Summary:</h2>
+        <p><%= summary %></p>
+    <% } %>
+</body>
+</html>
